@@ -137,6 +137,42 @@ namespace AI_GEN
 				if ( count > limit )
 					break;
 			}
+			// [] Create a ship gen summary
+			// # 1D: gen category, 2D: gen rank
+			List<char> mark = new List<char> {'A', 'B', 'C', 'D', 'E', 'F'};
+			int [,] genDiagram2D = new int[FogShip.attribute_count,FogShip.attribute_rank_count];
+			foreach ( var pair in rlt_remainList )
+			{
+				foreach ( FogShip ship in pair.Value )
+				{
+					// * Get the ship gen summary
+					for ( int i = 0; i < ship.gen.Length; i++ )
+					{
+						// * Find the rank and the sequence
+						float value = ship.gen[i];
+						char gen = FogShip.generateNameChar( value );
+						int rank = mark.IndexOf( gen );
+						// * Add the count
+						genDiagram2D[i,rank]++;
+					}
+				}
+			}
+			// [] Print the ship gen summary
+			Console.Write( "Ship attribute summary: \n" );
+			Console.Write( "+\tA\tB\tC\tD\tE\tF\n" );
+			for ( int i = 0; i < FogShip.attribute_count; i++ )
+			{
+				Console.Write( "" + i + ": " );
+				for ( int j = 0; j < FogShip.attribute_rank_count; j++ )
+				{
+					Console.Write( "\t" );
+					if ( genDiagram2D[i, j] != 0 )
+						Console.Write( genDiagram2D[i, j] );
+				}
+				Console.Write( "\n" );
+			}
+
+
 			rlt += '\n';
 			rlt += '\n';
 			return rlt;

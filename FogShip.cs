@@ -8,6 +8,8 @@ namespace AI_GEN
 {
     class FogShip
     {
+		static public int attribute_count = 8;
+		static public int attribute_rank_count = 6;
 		// * Ship attributes ( it's magic... )
         public float energy;
         public float attack;
@@ -138,7 +140,7 @@ namespace AI_GEN
             return 0;
         }
 
-		static private Char generateNameChar( float gen )
+		static public char generateNameChar( float gen )
 		{
 			if ( gen > 90 )
 				return 'A';
