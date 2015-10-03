@@ -1,5 +1,6 @@
-## Auto Game Configuration Tester & Generator
-This is a auto testing tool for game developers. It automatically test and suggest best configurations for games.
+## Auto Game Configuration Tester & Generator (C#)
+This is a auto testing tool for game developers. It automatically test and suggest best configurations for games.<br>
+**The C# version has stopped updating, check [Python version](https://github.com/xjxxjx1017/ai_gen_py) for new updates !**
 
 ### Current Flow
 1. Run main.py to start
@@ -33,5 +34,5 @@ r (x)               Redo the last 'n' command
 ````
 	
 ### Development Route Map
-The C# version stopped updating, future work will be put on [Python version](https://github.com/xjxxjx1017/ai_gen_py)
+The C# version has stopped updating, future work will be put on [Python version](https://github.com/xjxxjx1017/ai_gen_py)
 #####Thanks!
